@@ -23,6 +23,9 @@ namespace Programa
                 Console.WriteLine("El estudiante esta sovente?");
                 bool Solvencia = Boolean.Parse(Console.ReadLine());
 
+                Console.WriteLine("Ingrese el nombre del curso");
+                string NombreCurso = Console.ReadLine();
+
                 Console.WriteLine("Ingrese la calificacion del primer parcial");
                 int PrimerParcial = Int16.Parse(Console.ReadLine());
 
@@ -35,7 +38,7 @@ namespace Programa
                 Estudiante estudiante = new Estudiante(Nombre, Edad, Carnet, Solvencia);
                 ListadoEstudiantes[cont] = estudiante;
 
-                Cursos cursos = new Cursos(PrimerParcial, SegundoParcial, ExamenFinal);
+                Cursos cursos = new Cursos(NombreCurso, PrimerParcial, SegundoParcial, ExamenFinal);
                 Calificaciones[cont] = cursos;
 
                 cont++;
@@ -47,7 +50,7 @@ namespace Programa
                 Console.WriteLine("Nombre del estudiante " + estudiante.Nombre + " Edad " + estudiante.Edad + " Carnet " + estudiante.Carnet + " Solvencia " + estudiante.Solvencia);
 
                 Cursos cursos = Calificaciones[i];
-                Console.WriteLine("La calificacion del alumno " + estudiante.Nombre + " en el primer parcial es: " + cursos.PrimerParcial + " en el segundo parcial es: " + cursos.SegundoParcial + " en el examen final es: " + cursos.ExamenFinal);
+                Console.WriteLine("La calificacion del alumno " + estudiante.Nombre + " en el curso de: " + cursos.NombreCurso + " en el primer parcial es: " + cursos.PrimerParcial + " en el segundo parcial es: " + cursos.SegundoParcial + " y en el examen final es: " + cursos.ExamenFinal);
 
                  Console.WriteLine("");
             }
